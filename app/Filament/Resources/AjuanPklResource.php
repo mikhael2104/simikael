@@ -8,6 +8,7 @@ use App\Models\AjuanPkl;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\DatePicker;
@@ -65,8 +66,7 @@ class AjuanPklResource extends Resource
                         'ditolak' => 'Ditolak',
                     ])
                     ->default('pending')
-                    ->disabled(fn () => auth()->user()->hasRole('siswa'))
-                
+                    ->disabled(condition: Auth::user()->hasAnyRole('siswa', 'guru'))
             ]);
     }
 
