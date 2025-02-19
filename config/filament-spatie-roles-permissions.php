@@ -200,6 +200,7 @@ return [
 
         'excluded_policy_models' => [
             \App\Models\User::class,
+            \App\Models\Role::class,
         ],
 
         /*
