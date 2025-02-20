@@ -10,6 +10,7 @@ use Filament\Pages\Dashboard;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use App\Filament\Pages\Auth\LoginWeb;
+use App\Filament\Pages\Auth\Register;
 use Filament\Navigation\NavigationItem;
 use Filament\Widgets\FilamentInfoWidget;
 use Filament\Http\Middleware\Authenticate;
@@ -33,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(LoginWeb::class)
+            ->registration(Register::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
